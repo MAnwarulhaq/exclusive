@@ -73,7 +73,7 @@ const WishList = () => {
                   </button>
                 </div>
               </div>
-
+              
               <button className="hidden absolute bottom-0 w-full bg-black text-white h-10 rounded-b font-semibold cursor-pointer group-hover:block"
               onClick={()=>dispatch(addToCart(product))}
               >

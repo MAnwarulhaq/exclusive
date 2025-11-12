@@ -5,6 +5,7 @@ import p2 from '../assets/p2.png'
 import p3 from '../assets/p3.png'
 import p4 from '../assets/p4.png'
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
+import { Link } from 'react-router-dom';
 
 const Today = () => {
   const products = [
@@ -117,9 +118,11 @@ const Today = () => {
 
       
       <div className='my-10 flex justify-center items-center'>
+        <Link to='/allproducts'>
         <button className='bg-[#DB4444] text-white font-semibold  w-40 h-10 shadow cursor-pointer'>
           View All Products
         </button>
+        </Link>
       </div>
       <hr className='bg-gray-50 text-gray-300' />
     </div>

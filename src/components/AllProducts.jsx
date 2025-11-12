@@ -31,40 +31,33 @@ const AllProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [itemsToShow, setItemsToShow] = useState(4);
 
-  // Filter products based on search and category
   const filteredProducts = products.filter((p) => {
     const matchesSearch = p.heading.toLowerCase().includes(search.toLowerCase());
     const matchesCategory = selectedCategory === "All" || p.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
-  // Slice visible products for "load more"
   const visibleProducts = filteredProducts.slice(0, itemsToShow);
 
-  // Load more products
   const loadMore = () => {
     if (itemsToShow < filteredProducts.length) {
       setItemsToShow((prev) => prev + 4);
     }
   };
 
-  // Reset itemsToShow when search or category changes
   useEffect(() => {
     setItemsToShow(4);
   }, [search, selectedCategory]);
 
   return (
     <div className="w-full bg-gray-50 min-h-screen">
-      {/* Header */}
       <div className="bg-black text-white py-8 text-center">
-        <h1 className="text-3xl font-bold">🔥 VIP Exclusive Products 🔥</h1>
+        <h1 className="text-3xl font-bold">🔥  Exclusive Products 🔥</h1>
         <p className="text-gray-300 mt-2">Discover premium items and best offers — just for you!</p>
       </div>
 
-      {/* Main Grid */}
       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
         
-        {/* Categories */}
         <div className="bg-white p-5 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-4 border-b pb-2">Categories</h2>
           <ul className="space-y-3">
@@ -92,9 +85,7 @@ const AllProducts = () => {
           </ul>
         </div>
 
-        {/* Products */}
         <div className="md:col-span-3">
-          {/* Search + Sort */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mb-6">
             <input
               type="text"
@@ -112,7 +103,6 @@ const AllProducts = () => {
             </select>
           </div>
 
-          {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {visibleProducts.length > 0 ? (
               visibleProducts.map((p) => (
@@ -139,7 +129,6 @@ const AllProducts = () => {
             )}
           </div>
 
-          {/* Load More Button */}
           {itemsToShow < filteredProducts.length && (
             <div className="mt-10 w-full flex items-center justify-center">
               <button
