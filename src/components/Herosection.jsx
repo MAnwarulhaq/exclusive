@@ -14,11 +14,11 @@ const Herosection = () => {
   const [current, setCurrent] = useState(0);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 w-full">
+    <div className=" grid grid-cols-1 lg:grid-cols-12 w-full">
       
       <div className="hidden lg:flex col-span-3 h-[420px] bg-white justify-center items-center border-r border-gray-200">
         <ul className="space-y-5 p-5 font-[Poppins] text-sm">
-          <li className="flex items-center justify-between cursor-pointer">
+          <li className="flex items-center justify-between cursor-pointer  w-full">
             <span>Women's Fashion</span> <IoIosArrowForward />
           </li>
           <li className="flex items-center justify-between cursor-pointer">
@@ -68,7 +68,7 @@ const Herosection = () => {
         </div>
       </div>
 
-      <div className="lg:hidden bg-white w-full py-5 border-t border-gray-200">
+      <div className="lg:hidden bg-white w-full py-5 ">
         <ul className="grid grid-cols-2 gap-3 text-center text-sm font-[Poppins]">
           <li>Women's Fashion</li>
           <li>Men's Fashion</li>

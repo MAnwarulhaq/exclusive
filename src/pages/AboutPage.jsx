@@ -3,7 +3,7 @@ import { useState } from 'react'
 import sideimage from '../assets/Sideimage.png'
 import { AiOutlineShop } from 'react-icons/ai'
 import { FaSackDollar } from 'react-icons/fa6'
-import {  RiLinkedinLine, RiShoppingBag2Line } from 'react-icons/ri'
+import { RiLinkedinLine, RiShoppingBag2Line } from 'react-icons/ri'
 import { BiDollarCircle } from 'react-icons/bi'
 import Service from '../components/Service'
 import men1 from '../assets/men1.png'
@@ -55,19 +55,37 @@ const AboutPage = () => {
   const visibleMembers = companyStats.slice(startIndex, endIndex);
 
   return (
-    <div className='w-[90%] mx-auto my-15 overflow-hidden'>
-      <div className=" flex flex-col-reverse sm:flex-row gap-10 sm:gap-20 items-center">
-        <div className="sm:w-1/2 space-y-5 ">
-          <h1 className="text-3xl sm:text-4xl font-semibold">Our Story</h1>
-          <p className="text-sm sm:text-base">Launched in 2015, Exclusive is South Asia’s premier online shopping marketplace with an active presence in Bangladesh. Supported by a wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the region.</p>
-          <p className="text-sm sm:text-base">Exclusive has more than 1 Million products to offer, growing fast. It offers a diverse assortment in categories ranging from consumer electronics to fashion.</p>
+    <div className=' '>
+      <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-6 py-8">
+        <div className="order-1 sm:order-2 bg-[#ea7ca6] w-full h-[250px] sm:h-[400px] flex justify-center items-center">
+          <img
+            src={sideimage}
+            alt="Our Story"
+            className="w-full h-full object-contain"
+          />
         </div>
-        <div className="sm:w-1/2 relative w-full h-[300px] sm:h-[400px] flex justify-center items-center  ">
-          <img src={sideimage} alt="" className="  absolute   w-full h-full object-cover  md:-right-16" />
+
+        <div className="order-2 sm:order-1 flex flex-col justify-center items-center px-5 sm:px-10">
+          <div className=" space-y-5 text-center sm:text-left sm:px-5">
+            <h1 className="text-3xl sm:text-4xl font-semibold">Our Story</h1>
+            <p className="text-sm sm:text-base ">
+              Launched in 2015, Exclusive is South Asia’s premier online shopping
+              marketplace with an active presence in Bangladesh. Supported by a wide
+              range of tailored marketing, data and service solutions, Exclusive has
+              10,500 sellers and 300 brands and serves 3 million customers across the
+              region.
+            </p>
+            <p className="text-sm sm:text-base ">
+              Exclusive has more than 1 Million products to offer, growing fast. It
+              offers a diverse assortment in categories ranging from consumer
+              electronics to fashion.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className=" mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div className=" w-[90%] mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {[
           { icon: <AiOutlineShop />, title: "10.5k", desc: "Sellers active on our site" },
           { icon: <BiDollarCircle />, title: "10.5k", desc: "Revenue generated" },
@@ -81,7 +99,7 @@ const AboutPage = () => {
           </div>
         ))}
       </div>
-      <div>
+      <div className="w-[90%] mx-auto ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5  my-10">
           {visibleMembers.map((person) => (
             <div

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import p1 from '../assets/p1.png'
 import p2 from '../assets/p2.png'
@@ -14,7 +14,7 @@ import b1 from '../assets/b1.png'
 import b2 from '../assets/b2.png'
 import b3 from '../assets/b3.png'
 import b4 from '../assets/b4.png'
-import { addToCart,removeFromCart } from "../store/slice/cartslice";
+import { addToCart, removeFromCart } from "../store/slice/cartslice";
 
 import { IoStar } from "react-icons/io5";
 
@@ -22,7 +22,7 @@ import { IoStar } from "react-icons/io5";
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
   const products = [
     { id: 1, image: p4, heading: "HAVIT HV-G92 Gamepad", newprice: 120, oldprice: 160, discount: 30, images: [p4, p2, p3, p1] },
     { id: 2, image: p3, heading: "AK-900 Wired Keyboard", newprice: 120, oldprice: 160, discount: 10 },
@@ -56,27 +56,36 @@ const ProductDetail = () => {
 
   ];
 
-  const product = products.find((prod) => prod.id === parseInt(id));
+  const [product, setProduct] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null);
+  const [count, setCount] = useState(1);
+
+  useEffect(() => {
+    const foundProduct = products.find((prod) => prod.id === parseInt(id));
+    setProduct(foundProduct || null);
+    setSelectedImg(foundProduct ? foundProduct.image : null);
+    setCount(1);
+  }, [id]);
+
   if (!product) {
-    return <div className="w-[90%] mx-auto my-10">Product not found.</div>;
+    return (
+      <div className="w-[90%] mx-auto my-10 text-xl font-medium">
+        Product not found.
+      </div>
+    );
   }
 
   const images = product.images || [product.image];
-  // const [selectedImg, setSelectedImg] = useState(p1);
-  const [selectedImg, setSelectedImg] = useState(product?.image);
 
-  const [count, setCount] = useState(1);
-  // console.log(count);
-
-  const handleIncrease = () => setCount(prev => prev + 1);
-  const handleDecrease = () => setCount(prev => (prev > 1 ? prev - 1 : 1));
+  const handleIncrease = () => setCount((prev) => prev + 1);
+  const handleDecrease = () => setCount((prev) => (prev > 1 ? prev - 1 : 1));
 
   return (
     <>
 
       <div className="w-[90%] mx-auto my-10 grid grid-cols-1 md:grid-cols-2 gap-10">
 
-        <div className="flex flex-col-reverse sm:flex-row gap-5 w-[90%] mx-auto my-5">
+        <div className="flex flex-col-reverse sm:flex-row gap-5 ">
           <div className="flex sm:flex-col gap-3 sm:w-[20%] justify-center sm:justify-between items-center sm:items-start">
             {images.map((img, index) => (
               <div
