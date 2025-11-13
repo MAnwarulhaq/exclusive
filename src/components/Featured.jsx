@@ -10,8 +10,8 @@ import pp4 from '../assets/pp4.png'
 
 const Featured = () => {
     return (
-        <div className=' my-10  p-5 '>
-            <div className='flex gap-5 container w-[90%]  mx-auto '>
+        <div className='w-[90%]  mx-auto my-10  p-5 '>
+            <div className='flex gap-5 container  '>
                 <div className='w-5 bg-[#DB4444] h-10'></div>
                 <p className='text-[#DB4444] font-semibold text-2xl'>Featured</p>
             </div>

@@ -24,9 +24,11 @@ const JustForYou = () => {
           <div className="w-5 bg-[#DB4444] h-10 rounded"></div>
           <p className="text-2xl font-semibold">Just For You</p>
         </div>
-        <div className="w-40 h-12 border flex justify-center items-center cursor-pointer">
-          <button>See All</button>
-        </div>
+      
+          <Link to='/allproducts'>
+          <button className='w-40 h-12 border cursor-pointer '>See All</button>
+          </Link>
+        
       </div>
 
       <div className=" flex flex-wrap justify-center md:justify-between items-center gap-4 transition-all duration-500 ease-in-out py-4">

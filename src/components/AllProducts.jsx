@@ -8,6 +8,8 @@ import b1 from "../assets/b1.png";
 import b2 from "../assets/b2.png";
 import b3 from "../assets/b3.png";
 import b4 from "../assets/b4.png";
+import { addToCart } from "../store/slice/cartslice";
+import { useDispatch } from "react-redux";
 
 const categories = [
   { name: "Electronics", sub: ["Mobiles", "Laptops", "Accessories"] },
@@ -16,17 +18,42 @@ const categories = [
 ];
 
 const AllProducts = () => {
-  const products = [
-    { id: 1, img: p4, heading: "HAVIT HV-G92 Gamepad", newprice: 320, oldprice: 460, discount: 30, category: "Electronics", subcategory: "Accessories" },
-    { id: 2, img: p3, heading: "AK-900 Wired Keyboard", newprice: 700, oldprice: 760, discount: 10, category: "Electronics", subcategory: "Accessories" },
-    { id: 3, img: p2, heading: "IPS LCD Gaming Monitor", newprice: 920, oldprice: 999, discount: 20, category: "Electronics", subcategory: "Laptops" },
-    { id: 4, img: p1, heading: "S-Series Comfort Chair", newprice: 120, oldprice: 160, discount: 25, category: "Home & Kitchen", subcategory: "Furniture" },
-    { id: 5, img: b1, heading: "The North Coat", newprice: 220, oldprice: 260, category: "Fashion", subcategory: "Men" },
-    { id: 6, img: b2, heading: "Gucci Duffle Bag", newprice: 350, oldprice: 420, category: "Fashion", subcategory: "Women" },
-    { id: 7, img: b3, heading: "RGB Liquid CPU Cooler", newprice: 180, oldprice: 210, category: "Electronics", subcategory: "Accessories" },
-    { id: 8, img: b4, heading: "Small BookShelf", newprice: 95, oldprice: 120, category: "Home & Kitchen", subcategory: "Furniture" },
-  ];
 
+  const dispatch = useDispatch()
+
+
+  const products = [
+    { id: 1, image: p4, heading: "HAVIT HV-G92 Gamepad", newprice: 990, oldprice: 1000, discount: 30 },
+    { id: 2, image: p3, heading: "AK-900 Wired Keyboard", newprice: 1120, oldprice: 1160, discount: 10 },
+    { id: 3, image: p2, heading: "IPS LCD Gaming Monitor", newprice: 520, oldprice: 560, discount: 20 },
+    { id: 4, image: p1, heading: "S-Series Comfort Chair ", newprice: 120, oldprice: 160, discount: 25 },
+    { id: 5, image: p1, heading: "HAVIT HV-G92 Gamepad", newprice: 2000, oldprice: 2200, discount: 25 },
+    { id: 6, image: p3, heading: "HAVIT HV-G92 Gamepad", newprice: 110, oldprice: 160, },
+    { id: 7, image: p2, heading: "HAVIT HV-G92 Gamepad", newprice: 90, oldprice: 110, discount: 30 },
+    { id: 8, image: b1, heading: "The north coat", newprice: 320, oldprice: 460, discount: "", category: "Fashion", subcategory: "Men" },
+    { id: 9, image: b2, heading: "Gucci duffle bag", newprice: 400, oldprice: 460, discount: "", category: "Fashion", subcategory: "Men" },
+    { id: 10, image: b3, heading: "RGB liquid CPU Cooler", newprice: 320, oldprice: 360, discount: "" },
+    { id: 11, image: b4, heading: "Small BookSelf", newprice: 120, oldprice: 160, discount: "" },
+    { id: 12, image: p1, heading: "HAVIT HV-G92 Gamepad", newprice: 160, oldprice: 160 },
+    { id: 13, image: p2, heading: "AK-900 Wired Keyboard", newprice: 720, oldprice: 160 },
+    { id: 14, image: p3, heading: "IPS LCD Gaming Monitor", newprice: 10, oldprice: 160 },
+    { id: 15, image: p2, heading: "S-Series Comfort Chair ", newprice: 1660, oldprice: 160 },
+    { id: 16, image: p1, heading: "HAVIT HV-G92 Gamepad", newprice: 160, oldprice: 160 },
+    { id: 17, image: p3, heading: "HAVIT HV-G92 Gamepad", newprice: 120, oldprice: 160 },
+    { id: 18, image: p2, heading: "HAVIT HV-G92 Gamepad", newprice: 150, oldprice: 160 },
+    { id: 19, image: p2, heading: "S-Series Comfort Chair ", newprice: 120, oldprice: 160 },
+    { id: 20, image: p1, heading: "HAVIT HV-G92 Gamepad", newprice: 2000, oldprice: 160 },
+    { id: 21, image: p2, heading: "AK-900 Wired Keyboard", newprice: 130, oldprice: 160 },
+    { id: 22, image: p3, heading: "IPS LCD Gaming Monitor", newprice: 820, oldprice: 160 },
+    { id: 23, image: p2, heading: "S-Series Comfort Chair ", newprice: 1250, oldprice: 160 },
+    { id: 24, image: p1, heading: "HAVIT HV-G92 Gamepad", newprice: 1230, oldprice: 160 },
+    { id: 25, image: p3, heading: "HAVIT HV-G92 Gamepad", newprice: 190, oldprice: 160 },
+    { id: 26, image: p1, heading: "HAVIT HV-G92 Gamepad", newprice: 120, oldprice: 160, discount: 30 },
+    { id: 27, image: p2, heading: "AK-900 Wired Keyboard", newprice: 150, oldprice: 160 },
+    { id: 28, image: p3, heading: "IPS LCD Gaming Monitor", newprice: 900, oldprice: 1600 },
+    { id: 29, image: p2, heading: "S-Series Comfort Chair ", newprice: 1220, oldprice: 1250 },
+
+  ];
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [itemsToShow, setItemsToShow] = useState(4);
@@ -41,12 +68,15 @@ const AllProducts = () => {
 
   const loadMore = () => {
     if (itemsToShow < filteredProducts.length) {
-      setItemsToShow((prev) => prev + 4);
+      setItemsToShow((prev) => {
+        console.log(prev)
+        prev + 4
+      });
     }
   };
 
   useEffect(() => {
-    setItemsToShow(4);
+    itemsToShow
   }, [search, selectedCategory]);
 
   return (
@@ -57,7 +87,7 @@ const AllProducts = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
-        
+
         <div className="bg-white p-5 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-4 border-b pb-2">Categories</h2>
           <ul className="space-y-3">
@@ -112,14 +142,17 @@ const AllProducts = () => {
                       -{p.discount}%
                     </span>
                   )}
-                  <img src={p.img} alt={p.heading} className="w-full h-48 object-contain rounded-md mb-4" />
+                  <img src={p.image} alt={p.heading} className="w-full h-48 object-contain rounded-md mb-4" />
                   <h3 className="text-lg font-semibold text-gray-800 mb-1">{p.heading}</h3>
                   <p className="text-sm text-gray-500 mb-2">{p.category}</p>
                   <div className="flex items-center gap-2 mb-3">
                     <p className="text-red-500 font-bold">${p.newprice}</p>
                     <p className="text-gray-400 line-through text-sm">${p.oldprice}</p>
                   </div>
-                  <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-red-500 transition">
+
+                  <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-red-500 transition"
+                    onClick={() => dispatch(addToCart(p))}
+                  >
                     Add to Cart
                   </button>
                 </div>

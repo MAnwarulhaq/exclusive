@@ -50,7 +50,7 @@ const Herosection = () => {
             </div>
           </div>
 
-          <div className="w-[200px] sm:w-[300px] md:w-[350px]">
+          <div className="">
             <img src={banners[current].img} alt="hero" className="w-full object-contain" />
           </div>
         </div>
