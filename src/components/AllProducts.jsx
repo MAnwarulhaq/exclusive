@@ -83,9 +83,9 @@ const AllProducts = () => {
     }
   };
 
-    useEffect(()=>{
-      filteredProducts
-    },[search,categories])
+    // useEffect(()=>{
+    //   filteredProducts
+    // },[search,categories])
 
   return (
     <div className="w-full bg-gray-50 min-h-screen">
