@@ -50,7 +50,7 @@ const WishList = () => {
           </div>
         </div>
       </div>
-      <div className=" flex flex-wrap justify-center md:justify-start items-center gap-4 transition-all duration-500 ease-in-out py-4">
+      <div className=" flex flex-wrap justify-center lg:justify-start items-center gap-8 transition-all duration-500 ease-in-out py-4 ">
         {updateItemsToShow.map((product) => (
           <div
             key={product.id}

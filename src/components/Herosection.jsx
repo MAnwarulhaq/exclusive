@@ -37,20 +37,20 @@ const Herosection = () => {
       <div className="col-span-12 lg:col-span-9 relative h-screen lg:h-[400px] sm:h-[450px] sm:p-5 gap-2">
         <div className="bg-black text-white h-full flex flex-col-reverse sm:flex-row justify-around items-center   transition-all duration-700">
           
-          <div className="space-y-6 sm:space-y-10 text-center sm:text-left">
-            <img src={frame} alt="" className="mx-auto sm:mx-0 w-[120px] sm:w-auto" />
-            <div className="space-y-2 sm:space-y-3">
-              <p className="text-3xl sm:text-5xl font-semibold">Up to {banners[current].discount}</p>
-              <p className="text-3xl sm:text-5xl font-semibold">off Voucher</p>
+          <div className="space-y-3 sm:space-y-10 text-center sm:text-left ">
+            <img src={frame} alt="" className="mx-auto sm:mx-0 w-[120px] sm:w-auto " />
+            <div className=" sm:space-y-3">
+              <p className="text-2xl sm:text-5xl font-semibold">Up to {banners[current].discount}</p>
+              <p className="text-2xl sm:text-5xl font-semibold">off Voucher</p>
             </div>
 
-            <div className="flex justify-center sm:justify-start items-center gap-2 sm:gap-3 text-xl sm:text-2xl">
+            <div className="flex justify-center sm:justify-start items-center gap-2 sm:gap-3 text-xl sm:text-2xl mb-5">
               <button className="cursor-pointer hover:text-[#DB4444] transition flex justify-center items-center gap-3">Shop now <GoArrowRight className='mt-1'/></button>
               
             </div>
           </div>
 
-          <div className="">
+          <div className="  flex justify-center items-center">
             <img src={banners[current].img} alt="hero" className="w-full object-contain" />
           </div>
         </div>

@@ -31,24 +31,24 @@ const Account = () => {
                     <div>
                         <label htmlFor="fnmae">First Name</label>
                         <br />
-                        <input type="text" name='fname' id='fname' className='bg-gray-100 w-full  h-10' />
+                        <input type="text" name='fname' id='fname' className='bg-gray-100 w-full  h-10 p-3' />
                     </div>
                     <div>
                         <label htmlFor="lastname">Last Name</label>
                         <br />
-                        <input type="text" name="lastname" id="lastname" className='bg-gray-100 w-full  h-10' />
+                        <input type="text" name="lastname" id="lastname" className='bg-gray-100 w-full  h-10 p-3' />
 
                     </div>
                     <div >
                         <label htmlFor="email">Email</label>
                         <br />
-                        <input type="text" name="email" id="email" className='bg-gray-100 w-full h-10' />
+                        <input type="text" name="email" id="email" className='bg-gray-100 w-full h-10 p-3' />
 
                     </div>
                     <div>
                         <label htmlFor="address">Address</label>
                         <br />
-                        <input type="text" name="address" id="address" className='bg-gray-100 w-full  h-10' />
+                        <input type="text" name="address" id="address" className='bg-gray-100 w-full  h-10 p-3' />
 
                     </div>
 

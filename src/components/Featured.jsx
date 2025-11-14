@@ -10,12 +10,12 @@ import pp4 from '../assets/pp4.png'
 
 const Featured = () => {
     return (
-        <div className='w-[90%]  mx-auto my-10  p-5 '>
+        <div className='w-[90%]  mx-auto my-10  '>
             <div className='flex gap-5 container  '>
                 <div className='w-5 bg-[#DB4444] h-10'></div>
                 <p className='text-[#DB4444] font-semibold text-2xl'>Featured</p>
             </div>
-            <div className='flex flex-wrap justify-center  md:justify-between gap-5 items-center w-[90%] mx-auto my-5 '>
+            <div className='flex flex-wrap justify-center  md:justify-between gap-5 items-center my-5 '>
                 <div className='flex justify-between items-center gap-5'>
                     <p className='text-2xl font-semibold'>New Arrival</p>
 
@@ -24,7 +24,7 @@ const Featured = () => {
             </div>
 
 
-            <div className='w-[90%] mx-auto grid  grid-cols-1  sm:grid-cols-2 gap-3'>
+            <div className=' grid  grid-cols-1  sm:grid-cols-2 gap-3'>
                 <div className='bg-black relative'>
                     <img src={pp1} alt="" className='w-full h-full object-cover' />
                     <div className='absolute bottom-5 left-5 text-white space-y-2 sm:space-y-3 max-w-[50%]'>

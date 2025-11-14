@@ -18,7 +18,7 @@ const JustForYou = () => {
   ];
 
   return (
-    <div className="w-[90%] mx-auto my-10 overflow-hidden">
+    <div className=" w-[90%] mx-auto my-10 overflow-hidden">
       <div className="flex flex-wrap justify-center md:justify-between items-center gap-5 my-5">
         <div className="flex gap-5">
           <div className="w-5 bg-[#DB4444] h-10 rounded"></div>
@@ -31,7 +31,7 @@ const JustForYou = () => {
         
       </div>
 
-      <div className=" flex flex-wrap justify-center md:justify-between items-center gap-4 transition-all duration-500 ease-in-out py-4">
+      <div className=" flex flex-wrap justify-center lg:justify-start items-center gap-8 transition-all duration-500 ease-in-out py-4">
         {products.map((product) => (
           <div
             key={product.id}
