@@ -72,7 +72,7 @@ const Footer = () => {
                 <div className='space-y-4 '>
                     <h1 className='text-lg font-semibold'>Download App</h1>
                     <p>Save $3 with App New User Only</p>
-                    <div className='flex justify-center items-center gap-3'>
+                    <div className='flex gap-3'>
                         <div>
                             <img src={img3} alt="" />
                         </div>
@@ -82,7 +82,7 @@ const Footer = () => {
                         </div>
 
                     </div>
-                    <div className='flex justify-around  items-center text-lg'>
+                    <div className='flex gap-5  items-center text-lg'>
                         <RiFacebookLine />
                         <FiTwitter />
                         <IoLogoInstagram />

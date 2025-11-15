@@ -16,8 +16,8 @@ const Herosection = () => {
   return (
     <div className="w-full md:w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 ">
 
-      <div className="hidden lg:flex col-span-3 h-[420px] bg-white justify-center items-center border-r border-gray-200">
-        <ul className="space-y-5 p-5 font-[Poppins] text-sm">
+      <div className="hidden lg:flex col-span-3 h-[420px] bg-white  border-r border-gray-200">
+        <ul className="space-y-5 p-5 font-[Poppins] text-sm ">
           <li className="flex items-center justify-between cursor-pointer  w-full">
             <span>Women's Fashion</span> <IoIosArrowForward />
           </li>
