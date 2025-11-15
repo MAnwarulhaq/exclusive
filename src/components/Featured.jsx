@@ -34,27 +34,18 @@ const Featured = () => {
                     </div>
                 </div>
                 <div className='grid  grid-rows-2 gap-2   '>
-                    <div className=' bg-black grid index-1 grid-cols-1  sm:grid-cols-2 relative px-5'>
-                        <div className='relative text-white  '>
-                            <div className='w-full sm:w-80 sm:absolute bottom-15 left-10 space-y-3 '>
+                    <div className=' bg-black grid  grid-cols-1  sm:grid-cols-2'>
+                        <div className='flex justify-center items-center'>
+                            <div className=' flex flex-col justify-start items-start text-white w-60'>
                                 <h1 className='text-xl sm:text-2xl font-semibold'>Women’s Collections</h1>
                                 <p>Featured woman collections that give you another vibe.</p>
                                 <button className='border-b font-semibold cursor-pointer'>Shop Now</button>
                             </div>
-
                         </div>
-
-                        <div className='flex justify-end items-end '>
-                            <div >
-                                <img src={pp2} alt="" className='size-90  ' />
-                            </div>
-
-
+                          <div className='flex justify-start items-left '>
+                        
+                                <img src={pp2} alt="" className='  ' />
                         </div>
-
-
-
-
 
                     </div>
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>

@@ -6,10 +6,7 @@ import p1 from '../assets/p1.png'
 import p2 from '../assets/p2.png'
 import p3 from '../assets/p3.png'
 import { CiCamera, CiHeadphones, CiMobile4, CiMonitor } from "react-icons/ci";
-import { HiOutlineComputerDesktop } from "react-icons/hi2";
-import { CgAppleWatch } from 'react-icons/cg';
-import { IoCameraOutline, IoWatchOutline } from 'react-icons/io5';
-import { PiHeadphonesLight } from 'react-icons/pi';
+import { IoWatchOutline } from 'react-icons/io5';
 import { VscGame } from 'react-icons/vsc';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 import c1 from '../assets/c1.png'

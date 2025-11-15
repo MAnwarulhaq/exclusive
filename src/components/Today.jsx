@@ -58,10 +58,10 @@ const Today = () => {
         <p className='text-[#DB4444] font-semibold text-2xl'>Today's</p>
       </div>
 
-      <div className='flex flex-wrap justify-center md:justify-between gap-5 items-center'>
-        <div className='flex justify-between items-center gap-2 sm:gap-27 flex-wrap'>
-          <p className='text-4xl font-semibold'>Flash Sales</p>
-          <div className='flex flex-wrap justify-start  sm:justify-between items-center gap-5'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-3 '>
+        <div className='grid grid-cols-1 md:grid-cols-2'>
+          <p className='text-2xl md:text-4xl font-semibold'>Flash Sales</p>
+          <div className='flex flex-wrap justify-between items-center'>
             <div>
               <p className='font-semibold'>Days</p>
               <p className='text-2xl font-bold'>03</p>
@@ -84,7 +84,7 @@ const Today = () => {
           </div>
         </div>
 
-        <div className='flex justify-center items-center gap-5'>
+        <div className='flex justify-center md:justify-end items-center gap-5'>
           <div
             onClick={prevPage}
             className={`bg-gray-100 size-8 flex justify-center items-center rounded-full text-lg cursor-pointer hover:bg-gray-300 ${
