@@ -33,7 +33,7 @@ const BestProduct = () => {
                     <button className='bg-[#DB4444] w-30 h-10 text-white rounded-md font-semibold cursor-pointer hover:bg-red-600'>View All </button>
                 </div>
             </div>
-            <div className='grid grid-cols-4 gap-4  '>
+            <div className='grid  sm:grid-cols-2  lg:grid-cols-2  xl:grid-cols-4  gap-3  '>
                 {products.map((product) => (
                     <div
                         key={product.id}
