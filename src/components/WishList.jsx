@@ -33,9 +33,9 @@ const WishList = () => {
     }
   };
   return (
-    <>
+    <div className=''>
     
-    <div className='w-[90%] mx-auto my-5 overflow-hidden'>
+    <div className='w-[90%] mx-auto my-5 overflow-hidden '>
 
       <div className='flex flex-wrap justify-center md:justify-between gap-5 items-center  my-5'>
         <div className='flex justify-between items-center gap-27 flex-wrap'>
@@ -120,7 +120,7 @@ const WishList = () => {
     
     </div>
       <JustForYou />
-    </>
+    </div>
   )
 }
 
