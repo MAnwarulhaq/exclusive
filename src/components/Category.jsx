@@ -1,3 +1,5 @@
+import React from 'react'
+
 
 import { CiCamera, CiHeadphones, CiMobile4, CiMonitor } from "react-icons/ci";
 import { IoWatchOutline } from 'react-icons/io5';
