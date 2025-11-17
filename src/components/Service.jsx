@@ -6,7 +6,7 @@ import service3 from '../assets/Services3.png'
 
 const Service = () => {
   return (
-    <div className='my-20 flex flex-wrap justify-around items-center gap-5'>
+    <div className='my-20 w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5'>
             <div className='flex flex-col justify-center items-center space-y-3'>
                 <img src={service1} alt="" />
                 <h1 className='font-semibold text-lg'>FREE AND FAST DELIVERY</h1>

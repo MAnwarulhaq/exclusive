@@ -53,10 +53,10 @@ const Category = () => {
                     </div>
                 </div>
             </div>
-            <div className='  flex flex-wrap justify-center sm:justify-between items-center gap-5'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3'>
 
                 {category.map((item, index) => (
-                    <div key={index} className="border border-gray-300 rounded flex flex-col justify-center items-center w-full  sm:w-40 h-40 hover:bg-red-500 hover:text-white  cursor-pointer space-y-5">
+                    <div key={index} className="border border-gray-300 rounded flex flex-col justify-center items-center w-full   h-40 hover:bg-red-500 hover:text-white  cursor-pointer space-y-5">
                         <div className='text-3xl'> {item.icon}</div>
                         <p>{item.heading}</p>
                     </div>
