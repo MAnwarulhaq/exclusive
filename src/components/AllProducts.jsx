@@ -23,17 +23,17 @@ const AllProducts = () => {
 
 
   const products = [
-    { id: 1, image: p4, heading: "HAVIT HV-G92 Gamepad", newprice: 990, oldprice: 1000, discount: 30 , categorcategoryy: "Electronics", sub: ["Mobiles", "Laptops", "Accessories"]},
+    { id: 1, image: p4, heading: "HAVIT HV-G92 Gamepad", newprice: 990, oldprice: 1000, discount: 30, categorcategoryy: "Electronics", sub: ["Mobiles", "Laptops", "Accessories"] },
     { id: 2, image: p3, heading: "AK-900 Wired Keyboard", newprice: 1120, oldprice: 1160, discount: 10, category: "Electronics", sub: ["Mobiles", "Laptops", "Accessories"] },
     { id: 3, image: p2, heading: "IPS LCD Gaming Monitor", newprice: 520, oldprice: 560, discount: 20 },
-    { id: 4, image: p1, heading: "S-Series Comfort Chair ", newprice: 120, oldprice: 160, discount: 25 ,category: "Home & Kitchen", sub: ["Furniture", "Appliances", "Decor"] },
+    { id: 4, image: p1, heading: "S-Series Comfort Chair ", newprice: 120, oldprice: 160, discount: 25, category: "Home & Kitchen", sub: ["Furniture", "Appliances", "Decor"] },
     { id: 5, image: p1, heading: "HAVIT HV-G92 Gamepad", newprice: 2000, oldprice: 2200, discount: 25, category: "Electronics", sub: ["Mobiles", "Laptops", "Accessories"] },
     { id: 6, image: p3, heading: "HAVIT HV-G92 Gamepad", newprice: 110, oldprice: 160, },
     { id: 7, image: p2, heading: "HAVIT HV-G92 Gamepad", newprice: 90, oldprice: 110, discount: 30 },
     { id: 8, image: b1, heading: "The north coat", newprice: 320, oldprice: 460, discount: "", category: "Fashion", subcategory: "Men" },
     { id: 9, image: b2, heading: "Gucci duffle bag", newprice: 400, oldprice: 460, discount: "", category: "Fashion", subcategory: "Men" },
     { id: 10, image: b3, heading: "RGB liquid CPU Cooler", newprice: 320, oldprice: 360, discount: "" },
-    { id: 11, image: b4, heading: "Small BookSelf", newprice: 120, oldprice: 160, discount: "",category: "Home & Kitchen", sub: ["Furniture", "Appliances", "Decor"] },
+    { id: 11, image: b4, heading: "Small BookSelf", newprice: 120, oldprice: 160, discount: "", category: "Home & Kitchen", sub: ["Furniture", "Appliances", "Decor"] },
     { id: 12, image: p1, heading: "HAVIT HV-G92 Gamepad", newprice: 160, oldprice: 160 },
     { id: 13, image: p2, heading: "AK-900 Wired Keyboard", newprice: 720, oldprice: 160 },
     { id: 14, image: p3, heading: "IPS LCD Gaming Monitor", newprice: 10, oldprice: 160 },
@@ -66,7 +66,7 @@ const AllProducts = () => {
     return matchesSearch && matchesCategory;
   });
 
-   const filteredProduct1 = products.filter((p) => {
+  const filteredProduct1 = products.filter((p) => {
     const matchesSearch = p.heading.toLowerCase().includes(search.toLowerCase());
     const matchesCategory = selectedCategory === "All" || p.category === selectedCategory;
     return matchesSearch && matchesCategory;
@@ -83,9 +83,9 @@ const AllProducts = () => {
     }
   };
 
-    // useEffect(()=>{
-    //   filteredProducts
-    // },[search,categories])
+  // useEffect(()=>{
+  //   filteredProducts
+  // },[search,categories])
 
   return (
     <div className="w-full bg-gray-50 min-h-screen">
@@ -101,11 +101,11 @@ const AllProducts = () => {
           <ul className="space-y-3">
             <li
               className={`cursor-pointer font-medium ${selectedCategory === "All" ? "text-red-500" : "text-gray-800"}`}
-              onClick={() =>{
-                  setSelectedCategory("All")
-                  
-              } 
-            }
+              onClick={() => {
+                setSelectedCategory("All")
+
+              }
+              }
 
 
             >
@@ -147,74 +147,70 @@ const AllProducts = () => {
             </select>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {
+          {
+            search.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredProducts.length > 0 ? (
+                    filteredProducts.map((p) => (
+                      <div key={p.id} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition relative">
+                        {p.discount && (
+                          <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                            -{p.discount}%
+                          </span>
+                        )}
+                        <img src={p.image} alt={p.heading} className="w-full h-48 object-contain rounded-md mb-4" />
+                        <h3 className="text-lg font-semibold text-gray-800 mb-1">{p.heading}</h3>
+                        <p className="text-sm text-gray-500 mb-2">{p.category}</p>
+                        <div className="flex items-center gap-2 mb-3">
+                          <p className="text-red-500 font-bold">${p.newprice}</p>
+                          <p className="text-gray-400 line-through text-sm">${p.oldprice}</p>
+                        </div>
 
-              search.length > 0 ?(
-                  <>
-                     {filteredProducts.length > 0 ? (
-              filteredProducts.map((p) => (
-                <div key={p.id} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition relative">
-                  {p.discount && (
-                    <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
-                      -{p.discount}%
-                    </span>
+                        <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-red-500 transition"
+                          onClick={() => dispatch(addToCart(p))}
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-gray-500 text-center col-span-full">No products found.</p>
                   )}
-                  <img src={p.image} alt={p.heading} className="w-full h-48 object-contain rounded-md mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-800 mb-1">{p.heading}</h3>
-                  <p className="text-sm text-gray-500 mb-2">{p.category}</p>
-                  <div className="flex items-center gap-2 mb-3">
-                    <p className="text-red-500 font-bold">${p.newprice}</p>
-                    <p className="text-gray-400 line-through text-sm">${p.oldprice}</p>
-                  </div>
+              </div>
 
-                  <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-red-500 transition"
-                    onClick={() => dispatch(addToCart(p))}
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              ))
-            ) : (
-              <p className="text-gray-500 text-center col-span-full">No products found.</p>
-            )}
-                  </>
-              ): (
-                <>
+            ): (
+              <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                  {visibleProducts.length > 0 ? (
-              visibleProducts.map((p) => (
-                <div key={p.id} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition relative">
-                  {p.discount && (
-                    <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
-                      -{p.discount}%
-                    </span>
+                    visibleProducts.map((p) => (
+                      <div key={p.id} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition relative">
+                        {p.discount && (
+                          <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                            -{p.discount}%
+                          </span>
+                        )}
+                        <img src={p.image} alt={p.heading} className="w-full h-48 object-contain rounded-md mb-4" />
+                        <h3 className="text-lg font-semibold text-gray-800 mb-1">{p.heading}</h3>
+                        <p className="text-sm text-gray-500 mb-2">{p.category}</p>
+                        <div className="flex items-center gap-2 mb-3">
+                          <p className="text-red-500 font-bold">${p.newprice}</p>
+                          <p className="text-gray-400 line-through text-sm">${p.oldprice}</p>
+                        </div>
+
+                        <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-red-500 transition"
+                          onClick={() => dispatch(addToCart(p))}
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-gray-500 text-center col-span-full">No products found.</p>
                   )}
-                  <img src={p.image} alt={p.heading} className="w-full h-48 object-contain rounded-md mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-800 mb-1">{p.heading}</h3>
-                  <p className="text-sm text-gray-500 mb-2">{p.category}</p>
-                  <div className="flex items-center gap-2 mb-3">
-                    <p className="text-red-500 font-bold">${p.newprice}</p>
-                    <p className="text-gray-400 line-through text-sm">${p.oldprice}</p>
-                  </div>
 
-                  <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-red-500 transition"
-                    onClick={() => dispatch(addToCart(p))}
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              ))
-            ) : (
-              <p className="text-gray-500 text-center col-span-full">No products found.</p>
-            )}
-                </>
-              )
-
-            }
-           
-          </div>
-
-          {itemsToShow < filteredProducts.length && (
+                  
+              </div>
+              {itemsToShow < filteredProduct1.length && (
             <div className="mt-10 w-full flex items-center justify-center">
               <button
                 className="bg-red-500 w-60 h-12 text-white cursor-pointer rounded-lg hover:bg-red-600 transition"
@@ -224,6 +220,11 @@ const AllProducts = () => {
               </button>
             </div>
           )}
+              </div>
+            )
+          }
+
+      
         </div>
       </div>
     </div>
