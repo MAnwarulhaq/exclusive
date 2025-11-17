@@ -1,20 +1,8 @@
-import React from 'react'
-import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa6";
-import Products from './Products';
-import p1 from '../assets/p1.png'
-import p2 from '../assets/p2.png'
-import p3 from '../assets/p3.png'
+
 import { CiCamera, CiHeadphones, CiMobile4, CiMonitor } from "react-icons/ci";
 import { IoWatchOutline } from 'react-icons/io5';
 import { VscGame } from 'react-icons/vsc';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
-import c1 from '../assets/c1.png'
-import c2 from '../assets/c2.png'
-import c3 from '../assets/c3.png'
-import c4 from '../assets/c4.png'
-import c5 from '../assets/c5.png'
-import c6 from '../assets/c6.png'
 
 
 const Category = () => {
@@ -61,14 +49,6 @@ const Category = () => {
                         <p>{item.heading}</p>
                     </div>
                 ))}
-
-
-
-
-
-
-
-
             </div>
 
             <hr className='text-gray-300 my-10' />

@@ -34,11 +34,8 @@ const Banner = () => {
 
       </div>
       <div className=" relative flex justify-center items-center">
-
         <div className="hidden sm:block absolute w-full  h-[300px] top-3 rounded-full  bg-gradient-to-tr from-[#303030] to-[#505050]  blur-xl opacity-50 animate-pulse"></div>
-
-
-        <div className="flex justify-center items-center">
+        <div className="relative flex justify-center items-center">
           <img src={speaker} alt="" className=' '/>
 
         </div>
