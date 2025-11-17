@@ -16,8 +16,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className='w-full h-auto bg-[#000000] text-white  p-10'>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3'>
-                <div className='space-y-5 px-5 '>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5'>
+                <div className='space-y-5  '>
                     <div>
                         <Link to='/'>
                             <h1 className=' text-2xl font-semibold '>Exclusive</h1>
