@@ -28,7 +28,7 @@ const Footer = () => {
                     <p>Get 10% off your first order</p>
                     <div className='relative'>
                         <input type="text" name="" id="" className=' border w-full h-8 rounded-md p-3' placeholder='Enter your name ' />
-                        <IoSendSharp className='absolute right-10 top-2' />
+                        <IoSendSharp className='absolute right-3 top-2' />
                     </div>
 
 
