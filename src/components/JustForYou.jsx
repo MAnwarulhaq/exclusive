@@ -18,7 +18,7 @@ const JustForYou = () => {
   ];
 
   return (
-    <div className=" w-[90%] mx-auto my-10 overflow-hidden">
+    <div className=" w-[90%] mx-auto shadow   my-10 overflow-hidden">
       <div className="flex flex-wrap justify-center md:justify-between items-center gap-5 my-5">
         <div className="flex gap-5">
           <div className="w-5 bg-[#DB4444] h-10 rounded"></div>
@@ -31,11 +31,11 @@ const JustForYou = () => {
         
       </div>
 
-      <div className=" flex flex-wrap justify-center lg:justify-start items-center gap-8 transition-all duration-500 ease-in-out py-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
         {products.map((product) => (
           <div
             key={product.id}
-            className="shadow w-65 flex flex-col hover:scale-101 transition-transform duration-300"
+            className=""
           >
             <div className="relative group bg-gray-200 w-full h-60 flex justify-center items-center p-2 rounded-t">
               <img src={product.image} alt={product.heading} />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
@@ -27,14 +27,19 @@ import PrivateRouting from './components/PrivateRouting'
 
 function App() {
 
+   const isSignedUp = localStorage.getItem("signup");
+
+  useEffect(()=>{
+
+    <Navbar/>
+  },[isSignedUp])
+
   return (
     <>
 
       <Navbar />
       <Breadcrumbs />
       <Routes>
-
-
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/contact' element={<ContactPage />} />
@@ -58,13 +63,6 @@ function App() {
         } />
 
         <Route path='/*' element={<PageNotfound />} />
-
-
-
-
-
-
-
       </Routes>
       <Footer />
 

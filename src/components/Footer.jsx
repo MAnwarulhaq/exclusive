@@ -17,12 +17,17 @@ const Footer = () => {
     return (
         <div className='w-full h-auto bg-[#000000] text-white  p-10'>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3'>
-                <div className='space-y-5 '>
-                    <h1 className=' text-2xl font-semibold '>Exclusive</h1>
-                    <p className='text-lg font-semibold'>Subcribe</p>
+                <div className='space-y-5 px-5 '>
+                    <div>
+                        <Link to='/'>
+                            <h1 className=' text-2xl font-semibold '>Exclusive</h1>
+                        </Link>
+                    </div>
+
+                    <p className=' font-semibold'>Subcribe</p>
                     <p>Get 10% off your first order</p>
                     <div className='relative'>
-                        <input type="text" name="" id="" className=' border  h-8 rounded-md p-3' placeholder='Enter your name ' />
+                        <input type="text" name="" id="" className=' border w-full h-8 rounded-md p-3' placeholder='Enter your name ' />
                         <IoSendSharp className='absolute right-10 top-2' />
                     </div>
 
@@ -45,14 +50,14 @@ const Footer = () => {
                         <p>Login / Register</p>
                     </div>
                     <div>
-                      <Link to='/cart'>
+                        <Link to='/cart'>
                             <p>Cart</p>
                         </Link>
                     </div>
 
                     <div>
                         <Link to='/wishlist'>
-                        <p>Wishlist</p>
+                            <p>Wishlist</p>
                         </Link>
                     </div>
                     <div>

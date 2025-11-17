@@ -18,6 +18,7 @@ const SignUp = () => {
   function signup (){
       
       localStorage.setItem("signup",true);
+      localStorage.setItem("login",true)
       navigate("/");
       alert("Signup Successful");
   }
