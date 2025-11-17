@@ -52,7 +52,7 @@ const Today = () => {
   const visibleProducts = products.slice(startIndex, startIndex + itemsToShow);
 
   return (
-    <div className= 'w-[90%] mx-auto my-5  overflow-hidden space-y-5'>
+    <div className= 'w-[90%] mx-auto my-5  overflow-hidden space-y-5 '>
       <div className='flex gap-5 '>
         <div className='w-5 bg-[#DB4444] h-10 rounded'></div>
         <p className='text-[#DB4444] font-semibold text-2xl'>Today's</p>
@@ -106,15 +106,32 @@ const Today = () => {
       </div>
 
       
-      <div className=' flex justify-center md:justify-between items-center gap-4 transition-all duration-500 ease-in-out'>
-        {visibleProducts.map((product) => (
-          <div
-            key={product.id}
-            className='transition-transform duration-500 ease-in-out transform '>
-            <Products id={product.id} image={product.img} heading={product.heading} newprice={product.newprice} oldprice={product.oldprice} discount={product.discount} />
-          </div>
-        ))}
-      </div>
+     <div className='grid 
+  grid-cols-1 
+  sm:grid-cols-2 
+  lg:grid-cols-2 
+  xl:grid-cols-4 
+  gap-3
+  '>
+
+  {visibleProducts.map((product) => (
+    <div
+      key={product.id}
+      className='transition-transform duration-500 ease-in-out transform '
+    >
+      <Products 
+        id={product.id}
+        image={product.img}
+        heading={product.heading}
+        newprice={product.newprice}
+        oldprice={product.oldprice}
+        discount={product.discount}
+      />
+    </div>
+  ))}
+
+</div>
+
 
       
       <div className='my-10 flex justify-center items-center'>
