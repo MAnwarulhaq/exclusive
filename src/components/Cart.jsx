@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-  console.log(cartItems)
+  // console.log(cartItems)
 
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.newprice * item.qty, 0);

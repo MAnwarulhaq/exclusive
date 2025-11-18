@@ -50,11 +50,11 @@ const WishList = () => {
           </div>
         </div>
       </div>
-      <div className=" flex flex-wrap justify-center lg:justify-start items-center gap-8 transition-all duration-500 ease-in-out py-4 ">
+      <div className="  grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4  gap-5">
         {updateItemsToShow.map((product) => (
           <div
             key={product.id}
-            className="shadow w-65 flex flex-col hover:scale-101 transition-transform duration-300"
+            className="shadow  flex flex-col hover:scale-101 transition-transform duration-300 "
           >
             <div className="relative group bg-gray-200 w-full h-60 flex justify-center items-center p-2 rounded-t">
               <img src={product.image} alt={product.heading} />
