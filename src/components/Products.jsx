@@ -93,7 +93,7 @@ const Products = ({ id, image, heading, newprice, oldprice, discount }) => {
     //   </Link>
     // </div>
 
-    <div className="shadow   w-full  flex flex-col hover:shadow-lg hover:scale-105 duration-200">
+    <div className="shadow   w-full  flex flex-col hover:shadow-lg hover:scale-101 duration-200">
 
       <div className="relative group bg-gray-200 w-full h-60 flex justify-center items-center p-2 ">
         <img src={image} alt="" className="h-full object-contain" />

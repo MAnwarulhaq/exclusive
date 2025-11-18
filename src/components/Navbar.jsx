@@ -49,7 +49,7 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center gap-5">
               <div className="relative bg-gray-100 rounded-lg overflow-hidden">
                 <input
-                  type="text"
+                  type="search"
                   placeholder="What are you looking for?"
                   className="w-60 h-9 pl-3 pr-8 text-sm outline-none bg-transparent"
                 />
