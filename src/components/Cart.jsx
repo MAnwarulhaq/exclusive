@@ -119,7 +119,7 @@ const Cart = () => {
               <h1>Total:</h1>
               <p>${total}</p>
             </div>
-            <div className="flex justify-center items-center mt-5 ">
+            <div className=" sm:flex  sm:justify-center  sm:items-center mt-5  ">
               <Link to='/checkout'>
               <button className="w-full  sm:w-60 h-12 bg-[#db4444] hover:bg-red-500 text-white py-3 rounded cursor-pointer">
                 Process to Checkout

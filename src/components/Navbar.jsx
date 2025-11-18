@@ -138,7 +138,7 @@ const Navbar = () => {
                 <Link to="/signup" onClick={() => setMenuOpen(false)}>Sign Up</Link>
               </ul>
 
-              <div className="flex justify-center gap-6 py-3 text-2xl text-gray-700 border-t">
+              <div className="flex justify-center items-center gap-6 py-3 text-2xl text-gray-700 border-t">
                 <div className='relative'>
                   <Link to="/wishlist" className="hover:text-red-500 transition">
                     <GoHeart />
@@ -155,7 +155,49 @@ const Navbar = () => {
                     {cartCount}
                   </span>
                 </div>
-                <Link to="/useraccount"><LuUser /></Link>
+                {/* <Link to="/useraccount"><LuUser /></Link> */}
+                  <div className="relative">
+                  <button
+                    className={`text-2xl focus:outline-none size-10 ${open ? ('bg-red-600 text-white') : ("text-black ")} rounded-full  items-center flex justify-center cursor-pointer `}
+                    onClick={() => setOpen(!open)}
+                  // className=" text-2xl hover:text-black focus:outline-none size-10 rounded-full bg-red-600 items-center flex justify-center text-white"
+
+                  >
+                    <LuUser />
+                  </button>
+
+                  {open && (
+                    <div className="absolute right-0 mt-2 w-48 bg-black/20 backdrop-blur-sm rounded-md shadow-lg border border-gray-700">
+                      <ul className="py-2 text-sm text-white">
+                        <li className="px-4  py-2 hover:bg-gray-700">
+                          <Link to="/useraccount" >
+                            <button className='cursor-pointer flex items-center gap-2 ' onClick={() => setOpen(!open)}>
+                              <LuUser className='text-lg  ' /> <p> Manage My Account</p>
+                            </button>
+
+
+                          </Link>
+                        </li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2">
+                          <FiShoppingBag className='text-lg  ' /> <p> My Order</p>
+                        </li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2">
+
+                          <MdOutlineCancel className='text-lg  ' /> <p>    My Cancellations </p>
+                        </li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2">
+                          <IoIosStarOutline className='text-lg  ' /> <p> My Reviews</p>
+                        </li>
+                        <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white flex items-center gap-2">
+                          <BiLogOut className='text-lg  ' /> <p>Logout</p>
+                        </li>
+                      </ul>
+                    </div>
+
+                  )}
+                </div>
+                
+
               </div>
             </div>
           )}
