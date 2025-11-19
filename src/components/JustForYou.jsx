@@ -35,7 +35,7 @@ const JustForYou = () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className=""
+            className="bg-white shadow my-5"
           >
             <div className="relative group bg-gray-200 w-full h-60 flex justify-center items-center p-2 rounded-t">
               <img src={product.image} alt={product.heading} />

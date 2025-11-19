@@ -66,7 +66,7 @@ const Cart = () => {
                   <p className="text-sm md:text-base">${item.qty * item.newprice}</p>
                 </div>
                 
-                <div className="absolute top-0 left-2 text-red-500 text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
+                <div className="absolute top-0 left-2 text-red-500 text-2xl opacity-100 xl:opacity-0  xl:group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
                     <button onClick={() => dispatch(deleteItem(item.id))}>
                        <IoIosCloseCircleOutline />
                     </button>
