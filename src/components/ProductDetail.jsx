@@ -86,11 +86,17 @@ const ProductDetail = () => {
       <div className="w-[90%] mx-auto my-10 grid grid-cols-1 md:grid-cols-2 gap-10">
 
         <div className="flex flex-col-reverse sm:flex-row gap-5 ">
-          <div className="flex sm:flex-col gap-3 sm:w-[20%] justify-center sm:justify-between items-center sm:items-start">
+          <div 
+          // className="flex sm:flex-col gap-3 sm:w-[20%] justify-center sm:justify-between items-center sm:items-start"
+          className="grid grid-rows-4 gap-2 "
+          
+          >
             {images.map((img, index) => (
               <div
                 key={index}
-                className={`bg-gray-200 p-2 rounded-lg cursor-pointer hover:scale-105 transition `}
+                // className={`bg-gray-200 p-2 rounded-lg cursor-pointer hover:scale-105 transition  `}
+                className="flex items-center justify-center  w-40 bg-gray-200"
+
                 onClick={() => setSelectedImg(img)}
               >
                 <img
